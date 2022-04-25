@@ -21,6 +21,7 @@ class MealResource extends JsonResource
             'status' => !empty($request->diff_time) ? $this->status($request->diff_time) : null,
             'category' => new CategoryResource($this->category), // when having one element then use new resource, beacsuse it's not collection
             'tags' => TagResource::collection($this->tags),
+            'ingredients' => IngredientResource::collection($this->ingredients),
         ];
     }
 
